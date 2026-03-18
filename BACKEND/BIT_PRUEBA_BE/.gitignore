@@ -1,0 +1,83 @@
+######################################
+# Build results
+######################################
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+######################################
+# Visual Studio / VS Code
+######################################
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.suo
+*.cache
+*.bak
+
+######################################
+# Rider / JetBrains / ReSharper
+######################################
+.idea/
+*.sln.iml
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+######################################
+# NuGet
+######################################
+packages/
+!**/packages/build/
+!**/packages/repositories.config
+*.nupkg
+*.snupkg
+
+######################################
+# Web / IIS Express / Database
+######################################
+*.Publish.xml
+*.pubxml.user
+*.publishproj
+*.pfx
+*.cer
+App_Data/*.mdf
+App_Data/*.ldf
+App_Data/*.SDF
+# Evita configuraciones locales de IIS
+.vs/*/config/applicationhost.config
+
+######################################
+# Test Results & Logs
+######################################
+TestResult*/
+*.trx
+*.coverage
+*.log
+
+######################################
+# OS Files
+######################################
+.DS_Store
+Thumbs.db
+desktop.ini
+######################################
+# Archivos de Compilacion especificos
+######################################
+*.dll
+*.exe
+*.pdb
+*.xml
+# Excepcion: No bloquear el packages.config ni los archivos de configuracion del proyecto
+!packages.config
+!Web.config
+!Web.*.config
