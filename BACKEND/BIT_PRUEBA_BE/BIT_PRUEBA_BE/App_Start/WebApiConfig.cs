@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace BIT_PRUEBA_BE
 {
@@ -9,16 +10,15 @@ namespace BIT_PRUEBA_BE
     {
         public static void Register(HttpConfiguration config)
         {
-            // Configuración y servicios de Web API
+            var cors = new EnableCorsAttribute("*", "*", "*");
+            config.EnableCors(cors);
 
-            // Rutas de Web API
-            config.MapHttpAttributeRoutes();
 
-            config.Routes.MapHttpRoute(
-                name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
-            );
+            var jsonSettings = config.Formatters.JsonFormatter.SerializerSettings;
+            jsonSettings.ContractResolver = new Newtonsoft.Json.Serialization.CamelCasePropertyNamesContractResolver();
+            jsonSettings.Formatting = Newtonsoft.Json.Formatting.Indented;
+
+            config.Formatters.Remove(config.Formatters.XmlFormatter);
         }
     }
 }
